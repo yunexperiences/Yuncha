@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>芸茶 YunCha — 治愈每一刻</title>
+
+  <!-- Google Font: Noto Sans SC -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- 外部样式 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 页面说明 -->
+  <meta name="description" content="芸茶（YunCha）— 新加坡都市冷泡茶与零食订阅，智能取货柜自取，带来一丝宁静与疗愈。">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#home" class="logo" aria-label="芸茶 YunCha"><span class="logo-zh">芸茶</span> <span class="logo-en">YunCha</span></a>
+      </div>
+
+      <nav class="main-nav" id="main-nav" aria-label="主导航">
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#products">产品</a></li>
+          <li><a href="#about">关于</a></li>
+          <li><a href="#booking" class="btn btn-primary">预订</a></li>
+        </ul>
+      </nav>
+
+      <!-- 移动端汉堡菜单 -->
+      <button class="nav-toggle" id="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="打开菜单">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero 区域 -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">🍵 治愈每一刻</h1>
+          <p class="hero-subtitle">精心调配的冷泡茶，搭配精选零食，为您的都市生活带来一丝宁静与疗愈</p>
+          <div class="hero-ctas">
+            <a href="#booking" class="btn btn-primary">立即预订</a>
+            <a href="#products" class="btn btn-secondary">探索产品</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <!-- 简洁装饰图块（可替换为图片） -->
+          <div class="bottle-illustration" title="冷泡茶瓶装"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品区 -->
+    <section id="products" class="section">
+      <div class="container">
+        <h2 class="section-title">当季茶饮</h2>
+        <p class="section-desc">每季度更新菜单，以下为本季精选冷泡茶（每瓶均配精选小饼干）。</p>
+        <div id="product-list" class="product-grid" aria-live="polite">
+          <!-- 产品卡片由 script.js 动态渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于区 -->
+    <section id="about" class="section about">
+      <div class="container about-inner">
+        <h2 class="section-title">关于芸茶</h2>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>品牌故事</h3>
+            <p>芸茶（YunCha）诞生于都市快节奏中的一份温柔。我们相信在一瓶冷泡茶和一片小饼干之间，就能找到日常的片刻疗愈。通过草本配方与智能取货柜结合，为新加坡都市人提供便捷与舒适的茶体验。</p>
+          </article>
+
+          <article class="about-card">
+            <h3>疗愈理念</h3>
+            <p>以草本的自然力量为核心，结合冷泡工艺释放芳香，主打助消化、舒缓、助眠与提神等功能。产品每季度更新，遵循季节与风味的变化。</p>
+          </article>
+
+          <article class="about-card">
+            <h3>草本成分科普</h3>
+            <ul class="herb-list">
+              <li><strong>紫苏叶</strong> — 促进消化、清热解腻</li>
+              <li><strong>洋甘菊</strong> — 舒缓情绪、助眠镇静</li>
+              <li><strong>薄荷</strong> — 清凉提神、舒缓胃部不适</li>
+              <li><strong>玫瑰</strong> — 调节情绪、提升芳香体验</li>
+              <li><strong>人参</strong> — 补气提神、增强体力（少量搭配）</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 预订表单 -->
+    <section id="booking" class="section booking">
+      <div class="container">
+        <h2 class="section-title">在线预订</h2>
+        <p class="section-desc">请至少提前 2 天预订。取货方式为智能取货柜自取。</p>
+
+        <form id="booking-form" class="form-card" novalidate>
+          <!-- 产品下拉（动态填充） -->
+          <label for="product-select">选择茶品</label>
+          <select id="product-select" required aria-required="true">
+            <!-- option 由 script.js 填充 -->
+          </select>
+          <div class="form-row small">
+            <div>
+              <label for="location-select">取货点</label>
+              <select id="location-select" required>
+                <option value="">请选择取货点</option>
+                <option value="Bishan">Bishan</option>
+                <option value="Marine Parade">Marine Parade</option>
+                <option value="Toa Payoh">Toa Payoh</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pickup-date">取货日期</label>
+              <input type="date" id="pickup-date" required />
+            </div>
+          </div>
+
+          <div class="form-row small">
+            <div>
+              <label for="quantity-select">数量</label>
+              <select id="quantity-select" required>
+                <option value="1">1 瓶</option>
+                <option value="3">3 瓶</option>
+                <option value="6">6 瓶</option>
+                <option value="12">12 瓶</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="price-display">总价 (SGD)</label>
+              <div id="price-display" class="price">-</div>
+            </div>
+          </div>
+
+          <label for="customer-name">客户姓名</label>
+          <input id="customer-name" type="text" placeholder="例如：林小姐" required />
+
+          <label for="customer-phone">联系电话</label>
+          <input id="customer-phone" type="tel" placeholder="+65 9123 4567" required />
+
+          <label for="special-requests">特殊要求（可选）</label>
+          <textarea id="special-requests" rows="3" placeholder="例如：无坚果 / 避免甘草"></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">提交预订</button>
+            <button type="button" id="save-local" class="btn btn-outline">保存为草稿</button>
+          </div>
+
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 模态确认框 -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="modal-close" aria-label="关闭确认">×</button>
+      <h3>预订已提交</h3>
+      <div id="modal-body">
+        <!-- JS 填充确认信息 -->
+      </div>
+      <div class="modal-actions">
+        <button id="modal-ok" class="btn btn-primary">好的</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 芸茶 YunCha — 冷泡茶与零食订阅 · 智能取货柜自取 · 新加坡</p>
+    </div>
+  </footer>
+
+  <!-- 脚本 -->
+  <script src="script.js"></script>
+</body>
+</html>
